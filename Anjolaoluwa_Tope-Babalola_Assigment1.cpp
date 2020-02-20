@@ -30,7 +30,7 @@ int main()
 	cout << "Please put an expresion\n";
 	getline(cin, input);
 
-	//this loop checks is there is any invalid character in the infix equation 
+	//this loop checks if there is any invalid character in the infix equation 
 	for (int i = 0; i < input.length(); i++)
 	{
 		if ((!isdigit(input[i])) && (input[i] != '*') && (input[i] != '/') && (input[i] != '+') && (input[i] != '-') && (input[i] != '(') && (input[i] != ')') && (input[i] !='.')) {
@@ -52,14 +52,14 @@ int main()
 	cin >> reply;
 	cout << "*************************************************************\n";
 
-	// this converts the repy to lower case
+	// this converts the characters in the reply varaible to lower case letters
 	for (int i = 0; i < reply.length(); i++) {
 		char hold;
 		hold = tolower(reply[i]);
 		reply[i] = hold;
 	}
 
-	// This is to ensure that the useer gives the correct respones
+	// This statement  is to ensure that the user gives the correct response
 	if (reply != "yes" && reply != "no") {
 		//		cout << reply << endl;
 		cout << "Is this your equation? " << input << endl;
@@ -67,7 +67,7 @@ int main()
 		cin >> reply;
 	}
 
-	// if the response is given the correct if statement is seleceted 
+	// if the response  given is  correct this  if statement is execured
 	if (reply == "yes") {
 		// this is selected if the equation has no brackets
 		if (bracket(input) == false) {
@@ -84,7 +84,7 @@ int main()
 			cout << evaluation(nobracketpostfix(input)) << endl;
 		}
 	}
-	// if the user selects no these sets of code run, this set of instruction asks the user to rewrite his or her equation
+	// if the user selects no, these sets of code runs, this set of instructions asks the user to rewrite his or her equation
 	else if (reply == "no") {
 		while (reply == "no") {
 			cout << "*************************************************************\n";
